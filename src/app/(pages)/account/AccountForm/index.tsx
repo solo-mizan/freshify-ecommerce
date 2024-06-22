@@ -12,6 +12,10 @@ import { useAuth } from '../../../_providers/Auth'
 import classes from './index.module.scss'
 
 type FormData = {
+  phone: number
+  village: string
+  thana: string
+  district: string
   email: string
   name: string
   password: string
@@ -95,6 +99,25 @@ const AccountForm: React.FC = () => {
       <Message error={error} success={success} className={classes.message} />
       {!changePassword ? (
         <Fragment>
+          <Input name="name" label="নাম" register={register} error={errors.name} />
+          <Input
+            name="phone"
+            label="মুঠোফোন নাম্বার"
+            required
+            register={register}
+            error={errors.email}
+            type="number"
+          />
+          <Input
+            name="village"
+            label="গ্রাম/মহল্লা"
+            register={register}
+            error={errors.name}
+            required
+          />
+          <Input name="thana" label="থানা" register={register} error={errors.name} required />
+          <Input name="district" label="জেলা" register={register} error={errors.name} required />
+
           <p>
             {'Change your account details below, or '}
             <button
@@ -106,15 +129,6 @@ const AccountForm: React.FC = () => {
             </button>
             {' to change your password.'}
           </p>
-          <Input
-            name="email"
-            label="Email Address"
-            required
-            register={register}
-            error={errors.email}
-            type="email"
-          />
-          <Input name="name" label="Name" register={register} error={errors.name} />
         </Fragment>
       ) : (
         <Fragment>
@@ -132,7 +146,7 @@ const AccountForm: React.FC = () => {
           <Input
             name="password"
             type="password"
-            label="Password"
+            label="নতুন পাসওয়ার্ড"
             required
             register={register}
             error={errors.password}
@@ -140,17 +154,17 @@ const AccountForm: React.FC = () => {
           <Input
             name="passwordConfirm"
             type="password"
-            label="Confirm Password"
+            label="কনফার্ম নতুন পাসওয়ার্ড"
             required
             register={register}
-            validate={value => value === password.current || 'The passwords do not match'}
+            validate={value => value === password.current || 'পাসওয়ার্ড মিলেনি'}
             error={errors.passwordConfirm}
           />
         </Fragment>
       )}
       <Button
         type="submit"
-        label={isLoading ? 'Processing' : changePassword ? 'Change Password' : 'Update Account'}
+        label={isLoading ? 'প্রসেসিং' : changePassword ? 'পাসওয়ার্ড পরিবর্তন' : 'একাউন্ট আপডেট'}
         disabled={isLoading}
         appearance="primary"
         className={classes.submit}

@@ -29,10 +29,10 @@ export const OrderConfirmationPage: React.FC<{}> = () => {
             {`Your payment was successful but there was an error processing your order. Please contact us to resolve this issue.`}
           </p>
           <div className={classes.actions}>
-            <Button href="/account" label="View account" appearance="primary" />
+            <Button href="/account" label="একাউন্ট দেখুন" appearance="primary" />
             <Button
               href={`${process.env.NEXT_PUBLIC_SERVER_URL}/orders`}
-              label="View all orders"
+              label="সকল অর্ডার দেখুন"
               appearance="secondary"
             />
           </div>
@@ -41,13 +41,13 @@ export const OrderConfirmationPage: React.FC<{}> = () => {
         <Fragment>
           <h1>Thank you for your order!</h1>
           <p>
-            {`Your order has been confirmed. You will receive an email confirmation shortly. Your order ID is ${orderID}.`}
+            {`আপনার অর্ডার কনফার্ম হয়েছে। শীঘ্রই আপনি একটি অর্ডার নিশ্চিতকরণ বার্তা পাবেন। আপনার অর্ডার আইডি হলো ${orderID}.`}
           </p>
           <div className={classes.actions}>
-            <Button href={`/orders/${orderID}`} label="View order" appearance="primary" />
+            <Button href={`/account/orders/${orderID}`} label="অর্ডার দেখুন" appearance="primary" />
             <Button
-              href={`${process.env.NEXT_PUBLIC_SERVER_URL}/orders`}
-              label="View all orders"
+              href={`${process.env.NEXT_PUBLIC_SERVER_URL}/account/orders`}
+              label="সকল অর্ডার দেখুন"
               appearance="secondary"
             />
           </div>

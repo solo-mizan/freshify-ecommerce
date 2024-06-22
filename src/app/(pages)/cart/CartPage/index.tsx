@@ -38,19 +38,22 @@ export const CartPage: React.FC<{
         <Fragment>
           {cartIsEmpty ? (
             <div className={classes.empty}>
-              Your cart is empty.
+              আপনার কার্ট খালি।
               {typeof productsPage === 'object' && productsPage?.slug && (
                 <Fragment>
-                  {' '}
-                  <Link href={`/${productsPage.slug}`}>Click here</Link>
-                  {` to shop.`}
+                  <br /> {`কেনাকাটা করতে `}
+                  <Link style={{ fontWeight: 700 }} href={`/${productsPage.slug}`}>
+                    এখানে ক্লিক করুন।
+                  </Link>
                 </Fragment>
               )}
               {!user && (
                 <Fragment>
-                  {' '}
-                  <Link href={`/login?redirect=%2Fcart`}>Log in</Link>
-                  {` to view a saved cart.`}
+                  <br /> {`সেভ করা কার্ট দেখতে `}
+                  <Link style={{ fontWeight: 700 }} href={`/login?redirect=%2Fcart`}>
+                    লগ ইন{' '}
+                  </Link>
+                  {'করুন।'}
                 </Fragment>
               )}
             </div>
@@ -59,13 +62,13 @@ export const CartPage: React.FC<{
               <div>
                 {/* CART LIST HEADER */}
                 <div className={classes.header}>
-                  <p>Products</p>
+                  <p>পণ্য</p>
                   <div className={classes.headerItemDetails}>
                     <p></p>
                     <p></p>
-                    <p>Quantity</p>
+                    <p>পরিমাণ</p>
                   </div>
-                  <p className={classes.headersubtotal}>Subtotal</p>
+                  <p className={classes.headersubtotal}>সর্বমোট</p>
                 </div>
                 {/* CART ITEM LIST */}
                 <ul className={classes.itemsList}>
@@ -98,16 +101,16 @@ export const CartPage: React.FC<{
 
               <div className={classes.summary}>
                 <div className={classes.row}>
-                  <h6 className={classes.cartTotal}>Summary</h6>
+                  <h6 className={classes.cartTotal}>অর্ডার সারাংশ</h6>
                 </div>
 
                 <div className={classes.row}>
-                  <p className={classes.cartTotal}>Delivery Charge</p>
-                  <p className={classes.cartTotal}>$0</p>
+                  <p className={classes.cartTotal}>ডেলিভারি চার্জ</p>
+                  <p className={classes.cartTotal}>0 টাকা</p>
                 </div>
 
                 <div className={classes.row}>
-                  <p className={classes.cartTotal}>Grand Total</p>
+                  <p className={classes.cartTotal}>সর্বমোট</p>
                   <p className={classes.cartTotal}>{cartTotal.formatted}</p>
                 </div>
 
