@@ -1,6 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
-import { Jost } from 'next/font/google'
+import { Hind_Siliguri, Jost } from 'next/font/google'
 
 import { AdminBar } from './_components/AdminBar'
 import { Footer } from './_components/Footer'
@@ -17,6 +17,12 @@ const jost = Jost({
   variable: '--font-jost',
 })
 
+const hindSiliguri = Hind_Siliguri({
+  subsets: ['latin'],
+  weight: ['500'],
+  variable: '--font-hindSiliguri',
+})
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -25,7 +31,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className={jost.variable}>
+      <body className={hindSiliguri.variable}>
         <Providers>
           <AdminBar />
           {/* @ts-expect-error */}
