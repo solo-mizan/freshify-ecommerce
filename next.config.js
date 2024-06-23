@@ -4,7 +4,7 @@ const redirects = require('./redirects')
 
 const nextConfig = {
   typescript: {
-    ignoreBuildErrors: truncate,
+    ignoreBuildErrors: true,
   },
   reactStrictMode: true,
   swcMinify: true,
