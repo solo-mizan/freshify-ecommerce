@@ -81,12 +81,12 @@ export const CheckoutPage: React.FC<{
       {cartIsEmpty && (
         <div>
           {'Your '}
-          <Link href="/cart">cart</Link>
+          <Link href="/cart">কার্ট</Link>
           {' is empty.'}
           {typeof productsPage === 'object' && productsPage?.slug && (
             <Fragment>
               {' '}
-              <Link href={`/${productsPage.slug}`}>Continue shopping?</Link>
+              <Link href={`/${productsPage.slug}`}>কেনাকাটা চালিয়ে যান?</Link>
             </Fragment>
           )}
         </div>
@@ -94,12 +94,12 @@ export const CheckoutPage: React.FC<{
       {!cartIsEmpty && (
         <div className={classes.items}>
           <div className={classes.header}>
-            <p>Products</p>
+            <p>পণ্য সমূহ</p>
             <div className={classes.headerItemDetails}>
               <p></p>
-              <p className={classes.quantity}>Quantity</p>
+              <p className={classes.quantity}>পরিমাণ</p>
             </div>
-            <p className={classes.subtotal}>Subtotal</p>
+            <p className={classes.subtotal}>সর্বমোট</p>
           </div>
 
           <ul>
@@ -130,7 +130,7 @@ export const CheckoutPage: React.FC<{
               return null
             })}
             <div className={classes.orderTotal}>
-              <p>Order Total</p>
+              <p>সর্বমোট অর্ডার</p>
               <p>{cartTotal.formatted}</p>
             </div>
           </ul>
@@ -149,7 +149,7 @@ export const CheckoutPage: React.FC<{
       )}
       {clientSecret && (
         <Fragment>
-          <h3 className={classes.payment}>Payment Details</h3>
+          <h3 className={classes.payment}>পেমেন্ট ডিটেইলস</h3>
           {error && <p>{`Error: ${error}`}</p>}
           <Elements
             stripe={stripe}

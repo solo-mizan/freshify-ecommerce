@@ -6,6 +6,8 @@ import Link from 'next/link'
 import { Settings } from '../../../../payload/payload-types'
 import { useAuth } from '../../../_providers/Auth'
 
+import classes from './index.module.scss'
+
 export const LogoutPage: React.FC<{
   settings: Settings
 }> = props => {
@@ -19,9 +21,9 @@ export const LogoutPage: React.FC<{
     const performLogout = async () => {
       try {
         await logout()
-        setSuccess('Logged out successfully.')
+        setSuccess('আপনি লগআউট করেছেন।')
       } catch (_) {
-        setError('You are already logged out.')
+        setError('আপনি ইতিমধ্যে লগআউট করেছেন!')
       }
     }
 
@@ -34,16 +36,21 @@ export const LogoutPage: React.FC<{
         <div>
           <h1>{error || success}</h1>
           <p>
-            {'What would you like to do next?'}
+            {'এখন কি করতে চান?'}
+            <br />
             {typeof productsPage === 'object' && productsPage?.slug && (
               <Fragment>
-                {' '}
-                <Link href={`/${productsPage.slug}`}>Click here</Link>
-                {` to shop.`}
+                {` কেনাকাটা করতে `}
+                <Link className={classes.textBold} href={`/${productsPage.slug}`}>
+                  এখানে ক্লিক করুন।
+                </Link>{' '}
               </Fragment>
             )}
-            {` To log back in, `}
-            <Link href="/login">click here</Link>
+            <br />
+            {` পুনরায় লগইন করতে `}
+            <Link className={classes.textBold} href="/login">
+              এখানে ক্লিক করুন।
+            </Link>
             {'.'}
           </p>
         </div>

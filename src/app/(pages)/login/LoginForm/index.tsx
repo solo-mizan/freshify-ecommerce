@@ -50,7 +50,7 @@ const LoginForm: React.FC = () => {
       <Message error={error} className={classes.message} />
       <Input
         name="email"
-        label="Email Address"
+        label="ইমেইল অ্যাড্রেস"
         required
         register={register}
         error={errors.email}
@@ -59,7 +59,7 @@ const LoginForm: React.FC = () => {
       <Input
         name="password"
         type="password"
-        label="Password"
+        label="পাসওয়ার্ড"
         required
         register={register}
         error={errors.password}
@@ -67,14 +67,14 @@ const LoginForm: React.FC = () => {
       <Button
         type="submit"
         appearance="primary"
-        label={isLoading ? 'Processing' : 'Login'}
+        label={isLoading ? 'প্রসেসিং...' : 'লগইন'}
         disabled={isLoading}
         className={classes.submit}
       />
       <div className={classes.links}>
-        <Link href={`/create-account${allParams}`}>Create an account</Link>
+        <Link href={`/create-account${allParams}`}>নতুন একাউন্ট তৈরি করুন</Link>
         <br />
-        <Link href={`/recover-password${allParams}`}>Recover your password</Link>
+        <Link href={`/recover-password${allParams}`}>পাসওয়ার্ড পুনরুদ্ধার করুন</Link>
       </div>
     </form>
   )

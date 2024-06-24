@@ -1,44 +1,44 @@
 export const inclusions = [
   {
-    title: 'Free Shipping',
-    description: 'Free shipping for order above $150',
+    title: 'ফ্রি শিপিং',
+    description: 'Free shipping for order above 3000 Taka',
     icon: '/assets/icons/shipping.svg',
   },
   {
-    title: 'Money Guarantee',
-    description: 'Within 30 days for an exchange',
+    title: 'বিশ্বস্ত ই-কমার্স',
+    description: 'Approved by Bangladesh e-commerce association',
     icon: '/assets/icons/dollar.svg',
   },
   {
-    title: 'Online Support',
+    title: 'সার্বক্ষণিক সাপোর্ট',
     description: '24 hours a day, 7 days a week',
     icon: '/assets/icons/support.svg',
   },
   {
-    title: 'Flexible Payment',
-    description: 'Pay with multiple credit cards',
+    title: 'যেকোনো মাধ্যমে পেমেন্ট গ্রহন',
+    description: 'Pay with bKash, Nagad, Rocket, Visa card, Mastercard, Nexus card etc.',
     icon: '/assets/icons/payment.svg',
   },
 ]
 
 export const profileNavItems = [
   {
-    title: 'Personal Information',
+    title: 'ব্যক্তিগত তথ্য',
     url: '/account',
     icon: '/assets/icons/user.svg',
   },
   {
-    title: 'My Purchases',
+    title: 'আমার কেনাকাটা',
     url: '/account/purchases',
     icon: '/assets/icons/purchases.svg',
   },
   {
-    title: 'My Orders',
+    title: 'আমার অর্ডার সমূহ',
     url: '/account/orders',
     icon: '/assets/icons/orders.svg',
   },
   {
-    title: 'Logout',
+    title: 'লগ আউট',
     url: '/logout',
     icon: '/assets/icons/logout.svg',
   },

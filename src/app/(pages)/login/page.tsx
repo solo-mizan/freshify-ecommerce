@@ -20,13 +20,7 @@ export default async function Login() {
     <section className={classes.login}>
       <div className={classes.heroImg}>
         <Link href="/">
-          <Image
-            src="/logo-black.svg"
-            alt="logo"
-            width={250}
-            height={23}
-            className={classes.logo}
-          />
+          <Image src="/logo-red.png" alt="logo" width={250} height={23} className={classes.logo} />
         </Link>
       </div>
 
@@ -35,10 +29,10 @@ export default async function Login() {
           <RenderParams className={classes.params} />
 
           <div className={classes.formTitle}>
-            <h3>Welcome</h3>
+            <h3>স্বাগতম</h3>
             <Image src="/assets/icons/hand.png" alt="waving hand" width={30} height={30} />
           </div>
-          <p>Please login here</p>
+          <p>লগ ইন করুন</p>
           <LoginForm />
         </div>
       </div>

@@ -33,6 +33,7 @@ export type Props = {
   populatedDocs?: ArchiveBlockProps['populatedDocs']
   populatedDocsTotal?: ArchiveBlockProps['populatedDocsTotal']
   categories?: ArchiveBlockProps['categories']
+  sort?: string
 }
 
 export const CollectionArchive: React.FC<Props> = props => {

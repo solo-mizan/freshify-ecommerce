@@ -78,7 +78,7 @@ const CreateAccountForm: React.FC = () => {
       <Message error={error} className={classes.message} />
       <Input
         name="name"
-        label="Full name"
+        label="পুরো নাম"
         required
         register={register}
         error={errors.name}
@@ -86,7 +86,7 @@ const CreateAccountForm: React.FC = () => {
       />
       <Input
         name="email"
-        label="Email Address"
+        label="ইমেইল অ্যাড্রেস"
         required
         register={register}
         error={errors.email}
@@ -95,7 +95,7 @@ const CreateAccountForm: React.FC = () => {
       <Input
         name="password"
         type="password"
-        label="Password"
+        label="পাসওয়ার্ড"
         required
         register={register}
         error={errors.password}
@@ -103,22 +103,24 @@ const CreateAccountForm: React.FC = () => {
       <Input
         name="passwordConfirm"
         type="password"
-        label="Confirm Password"
+        label="পুনরায় পাসওয়ার্ড দিন"
         required
         register={register}
-        validate={value => value === password.current || 'The passwords do not match'}
+        validate={value => value === password.current || 'পাসওয়ার্ড মিলেনি!'}
         error={errors.passwordConfirm}
       />
       <Button
         type="submit"
-        label={loading ? 'Processing...' : 'Create Account'}
+        label={loading ? 'প্রসেসিং...' : 'একাউন্ট তৈরি করুন'}
         disabled={loading}
         appearance="primary"
         className={classes.submit}
       />
       <div>
-        {'Already have an account? '}
-        <Link href={`/login${allParams}`}>Login</Link>
+        {'আপনার একাউন্ট আছে? তাহলে '}
+        <Link style={{ fontWeight: 600 }} href={`/login${allParams}`}>
+          এখানে লগ ইন করুন
+        </Link>
       </div>
     </form>
   )
