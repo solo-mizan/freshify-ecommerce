@@ -67,8 +67,9 @@ export const CartPage: React.FC<{
                     <p></p>
                     <p></p>
                     <p>পরিমাণ</p>
+                    <p></p>
                   </div>
-                  <p className={classes.headersubtotal}>সর্বমোট</p>
+                  <p className={classes.headerSubtotal}>সর্বমোট</p>
                 </div>
                 {/* CART ITEM LIST */}
                 <ul className={classes.itemsList}>
@@ -117,7 +118,7 @@ export const CartPage: React.FC<{
                 <Button
                   className={classes.checkoutButton}
                   href={user ? '/checkout' : '/login?redirect=%2Fcheckout'}
-                  label={user ? 'Checkout' : 'Login to checkout'}
+                  label={user ? 'Checkout' : 'চেকআউট করতে লগইন করুন'}
                   appearance="primary"
                 />
               </div>

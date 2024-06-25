@@ -16,7 +16,7 @@ export const RemoveFromCartButton: React.FC<{
   const productIsInCart = isProductInCart(product)
 
   if (!productIsInCart) {
-    return <div>Item is not in the cart</div>
+    return <div>আইটেম টি কার্টে নেই।</div>
   }
 
   return (
@@ -27,7 +27,7 @@ export const RemoveFromCartButton: React.FC<{
       }}
       className={[className, classes.removeFromCartButton].filter(Boolean).join(' ')}
     >
-      Remove
+      বাদ দিন
     </button>
   )
 }
